@@ -1,0 +1,49 @@
+
+
+
+
+.r{
+    background-image:url('../planttt.png');
+    width: 250px;
+    height: 996px;
+    top: 550px;
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 2 ;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.r2{
+    background-image: url('../plant2.png');
+    width: 748px;
+    height: 996px;
+    top: 600px;
+    left: -200px;
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+    
+}
+.r3{
+    background-image: url('../mann.png');
+    width: 496px;
+    height: 659px;
+    border-radius: 360px 360px 16px 16px;
+ box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.25);
+z-index: 3;
+    position: absolute;
+ margin-top: 200px;
+ margin-left: 100px;
+ background-repeat: no-repeat;
+ background-size: 150%;
+ background-position: top center;
+display: flex;
+    flex-wrap: wrap;
+    
+ 
+}

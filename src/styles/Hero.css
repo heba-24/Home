@@ -1,0 +1,252 @@
+/*relative*/
+/* --- إعدادات عامة ضرورية --- */
+* {
+    box-sizing: border-box;
+}
+
+/* 1. الحاوية الرئيسية للهيرو (الخلفية) */
+.l {
+    position: relative;
+    width: 100%;
+    /* بدلاً من ارتفاع ثابت، نستخدم min-height ليسمح للمحتوى بالتمدد */
+    min-height: 85vh; 
+    background-image: url('/src/img1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    direction: rtl;
+    display: flex;
+    justify-content: center; /* توسيط المحتوى أفقياً */
+    align-items: center;     /* توسيط المحتوى رأسياً */
+    padding: 20px;           /* مسافة داخلية عشان المحتوى ميمسكش في الحواف */
+    overflow: hidden;   
+    z-index: 3;    /* قص أي زيادات */
+}
+
+/* 2. الطبقة السوداء الشفافة */
+.l2 {
+    position: absolute;
+    inset: 0; /* تغطي المساحة كلها */
+    background-color: black;
+    opacity: 0.5; /* غمقت الشفافية قليلاً لتوضيح الكلام */
+    z-index: 1;
+    
+}
+
+
+/* 3. الحاوية التي تجمع النص والإحصائيات */
+.l3 {
+    position: relative;
+    z-index: 2; /* لتظهر فوق الطبقة السوداء */
+    display: flex;
+    justify-content: space-between; /* توزيع مسافة بين النص والإحصائيات */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* أقصى عرض حتى لا يتشتت المحتوى في الشاشات العملاقة */
+    gap: 40px; /* مسافة معقولة بين القسمين */
+    flex-wrap: wrap; /* يسمح بنزول العناصر تحت بعض في الموبايل */
+}
+/* --- القسم الأيمن: النصوص --- */
+.l1 {
+    flex: 1; /* يأخذ المساحة المتاحة */
+    min-width: 300px; /* أقل عرض ممكن */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* تقليل الفجوات الكبيرة */
+}
+
+.l4 {
+    width: 100%; /* تعبئة العرض المتاح */
+    text-align: right; /* محاذاة لليمين */
+}
+
+/* كلمة "ميراثاً" */
+.l5 {
+    font-family: "Cairo", sans-serif;
+    font-weight: 800; /* Bold */
+    font-size: 80px; /* تم التصغير من 120 ليكون أنيقاً */
+    line-height: 1.1;
+    color: rgba(245, 255, 245, 1);
+    margin-bottom: 10px;
+}
+
+/* الجملة الثانية */
+.l6 {
+    font-family: "Cairo", sans-serif;
+    font-weight: 700;
+    font-size: 36px; /* تم التصغير من 61 */
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 15px;
+}
+
+/* الوصف الصغير */
+.l7 {
+    font-family: "Cairo", sans-serif;
+    font-size: 18px; /* تم التصغير من 31 */
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(255, 251, 237, 0.9);
+    max-width: 600px; /* حتى لا يكون السطر طويل جداً للقراءة */
+}
+
+/* حاوية الأزرار */
+.l8 {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: wrap; /* الأزرار تنزل تحت بعض لو الشاشة صغيرة */
+    margin-top: 20px;
+}
+
+/* تصميم الأزرار الموحد لتقليل الكود */
+.l9, .l10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 30px; /* حجم الزر يعتمد على البادينج */
+    border-radius: 10px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 700;
+    font-size: 18px; /* حجم خط منطقي للزر */
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s;
+    height: auto; /* الارتفاع أوتوماتيك */
+    width: auto;  /* العرض أوتوماتيك */
+     transition: transform 0.3s ease;
+}
+.l9:hover {
+  transform: translateY(-5px); /* حركة عند اللمس */
+  
+}
+
+
+.l9 {
+    background-color: rgba(255, 229, 177, 1);
+    color: rgba(51, 51, 51, 1);
+}
+
+.l9:hover {
+    background-color: #ffda85; /* تأثير عند الوقوف */
+}
+
+.l10 {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 217, 144, 1);
+    border: 1px solid rgba(255, 217, 144, 0.5);
+     transition: transform 0.3s ease;
+}
+.l10:hover {
+  transform: translateY(-5px); /* حركة عند اللمس */
+  
+
+}
+
+.l10:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- القسم الأيسر: الإحصائيات (الكروت) --- */
+.j {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* إلغاء العرض الثابت وجعله مرن */
+    width: auto; 
+    margin-top: 0; /* إزالة المارجن الزائد */
+}
+
+.j1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 16px;
+    /* جعل العرض مرن */
+    width: 280px; 
+    height: auto;
+    background-color: rgba(25, 37, 31, 0.5); /* زيادة الشفافية */
+    backdrop-filter: blur(5px); /* تأثير ضبابي جميل للخلفية */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+     transition: transform 0.3s ease;
+}
+.j1:hover {
+  transform: translateY(-8px); /* حركة عند اللمس */
+}
+
+
+
+
+
+.j2 {
+    font-family: "Cairo", sans-serif;
+    font-size: 40px; /* تصغير الرقم */
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+    width: auto;
+    height: auto;
+   
+}
+
+.j3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    width: auto;
+    height: auto;
+    
+}
+
+
+
+/* --- الجزء الأهم: التجاوب مع الموبايل والتابلت --- */
+@media (max-width: 992px) {
+    .l3 {
+        flex-direction: column; /* العناصر فوق بعض */
+        text-align: center; /* توسيط الكلام في الموبايل */
+        gap: 50px;
+    }
+
+    .l1 {
+        align-items: center; /* توسيط العناصر داخل العمود */
+    }
+
+    .l4 {
+        text-align: center;
+        height: auto;
+    }
+
+    .l5 {
+        font-size: 50px; /* تصغير العنوان للموبايل */
+    }
+
+    .l6 {
+        font-size: 24px;
+    }
+
+    .l7 {
+        font-size: 16px;
+    }
+
+    .l8 {
+        justify-content: center; /* توسيط الأزرار */
+    }
+    
+    .j {
+        flex-direction: row; /* الكروت بجانب بعض في التابلت بدلاً من فوق بعض */
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .j1 {
+        width: 100%;
+        max-width: 300px; /* حجم الكارت في الموبايل */
+    }
+}
